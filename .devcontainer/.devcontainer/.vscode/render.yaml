@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: permitarb-cleveland
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: ARCGIS_FEATURESERVER_URL
+        value: https://services2.arcgis.com/CyVvlIiUfRBmMQuu/arcgis/rest/services/Building_Permits_Applications_view/FeatureServer/0
+      - key: CACHE_TTL_SECONDS
+        value: "21600"
+      - key: DEFAULT_DAYS
+        value: "60"
+      - key: DEFAULT_MIN_VALUE
+        value: "500000"
