@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run PermitArb (Flask Dev)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "export PORT=10000; export ARCGIS_FEATURESERVER_URL='https://services2.arcgis.com/CyVvlIiUfRBmMQuu/arcgis/rest/services/Building_Permits_Applications_view/FeatureServer/0'; python app.py"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
